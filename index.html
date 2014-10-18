@@ -1,0 +1,21 @@
+<html ng-app="sliderApp">
+<head>
+  <script src="js/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="sliderController">
+<div class="slider-wrap">
+    <div class="bullets-wrap">
+        <div class="bullets">
+            <span ng-click="changeSlide($index)" ng-repeat="image in images" ng-class="{active: $index == currentIndex}"></span>
+        </div><!-- end bullets -->
+    </div><!-- end bullets-wrap -->
+    <div class="slider">
+        <div class="slide" ng-repeat="image in images" ng-show="image.visible">
+            <img alt="{{image.name}}" src="{{image.src}}">
+        </div>
+    </div>
+</div>
+</body>
+</html>
